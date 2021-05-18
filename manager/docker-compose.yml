@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  repo.huanjutang.com:
+    image: registry.cn-shanghai.aliyuncs.com/huanjutang/otter-manager:4.2.18-v3
+    container_name: otter-manager.huanjutang.com
+    volumes:
+      - ./logs:/opt/logs:rw
+    working_dir: /opt
+    network_mode: host
+    environment:
+      - OTTER_ZOOKEEPER_CLUSTER=10.0.7.36:2181
+      - OTTER_DOMAINNAME=47.102.149.200
+      - OTTER_DATABASE_URL=10.0.7.36:3306/otter
+      - OTTER_DATABASE_USERNAME=root
+      - OTTER_DATABASE_PASSWORD=Aa123456.
+#    ports:
+#      - "1099:1099"
+#      - "8080:8080"
+    cap_add:
+      - SYS_PTRACE
