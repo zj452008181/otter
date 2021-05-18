@@ -14,10 +14,10 @@
 show master status
 
 # 导出腾讯DB binlog内容
-mysqlbinlog -R -P60118 -hsh-cdb-6r6he2do.sql.tencentcdb.com -umigration -p -v --base64-output=DECODE-ROWS --database=url_project ali_mysql-bin.000002 > tx_mysql-bin.000002.log
+mysqlbinlog -R -P60118 -h -u -p -v --base64-output=DECODE-ROWS --database=url_project ali_mysql-bin.000002 > tx_mysql-bin.000002.log
 
 # 导出RDS binlog内容
-mysqlbinlog -R -hrm-uf652jkcdcip388kv.mysql.rds.aliyuncs.com -umigration -p -v --base64-output=DECODE-ROWS --database=url_project ali_mysql-bin.001714 > ali_mysql-bin.001714.log
+mysqlbinlog -R -h -u -p -v --base64-output=DECODE-ROWS --database=url_project ali_mysql-bin.001714 > ali_mysql-bin.001714.log
 ```
 
 ### 查看腾讯DB tx_mysql-bin.000002.log中迁移的最后一条变更记录，再根据记录去查询阿里RDS  ali_mysql-bin.001714.log中对应的gtdi和position点位信息。
