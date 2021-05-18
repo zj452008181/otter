@@ -6,14 +6,14 @@ do
 date=`date +'%Y%m%d%H%M%S'`
 MYSQL1_USER="retl"
 MYSQL1_PASSWD=""
-MYSQL1_HOST="rm-uf6esc35t7m9hiiehso.mysql.rds.aliyuncs.com"
+MYSQL1_HOST=""
 MYSQL1_PORT="3306"
 MYSQL1_TABLE="otter_test.example"
 
 MYSQL2_USER="retl"
 MYSQL2_PASSWD=""
-MYSQL2_HOST="sh-cdb-6r6he2do.sql.tencentcdb.com"
-MYSQL2_PORT="60118"
+MYSQL2_HOST=""
+MYSQL2_PORT=""
 MYSQL2_TABLE="otter_test.example"
 sleep 10
 
