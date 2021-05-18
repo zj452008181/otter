@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  otter-node.huanjutang.com:
+    image: registry.cn-shanghai.aliyuncs.com/huanjutang/otter-node:4.2.18-v2
+    container_name: otter-node.huanjutang.com
+    volumes:
+      - ./logs:/opt/logs:rw
+    working_dir: /opt
+    network_mode: bridge
+    environment:
+      - NID=1
+      - OTTER_MANAGER_ADDRESS=10.0.7.36:1099
+    ports:
+      - "12088:12088"
+      - "12089:12089"
+      - "12090:12090"
+    cap_add:
+      - SYS_PTRACE
